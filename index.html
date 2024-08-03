@@ -10,51 +10,40 @@
 
 <body>
     <div class="container">
-        <div class="key-section">
-            <div class="key-generator half-width">
-                <input id="display-key" class="form-control" type="text">
-                <button id="generate-key" class="generate-btn">Generate key</button>
-            </div>
+        <div class="half-width">
+            <input id="display-key" type="text">
+            <button id="generate-key" class="generate-btn">Generate key</button>
         </div>
 
-        <div class="key-generator-section">
-            <div class="input-section half-width">
-                <input id="typed-numbers" class="form-control" type="text">
-                <div class="numbers">
-                    <div id="key-generator" class="key-body">
-                        <div class="key-button-row">
-                            <div class="button">1</div>
-                            <div class="button">2</div>
-                            <div class="button">3</div>
-                        </div>
-                        <div class="key-button-row">
-                            <div class="button">4</div>
-                            <div class="button">5</div>
-                            <div class="button">6</div>
-                        </div>
-                        <div class="key-button-row">
-                            <div class="button">7</div>
-                            <div class="button">8</div>
-                            <div class="button">9</div>
-                        </div>
-                        <div class="key-button-row">
-                            <div class="button">&lt;</div>
-                            <div class="button">0</div>
-                            <div class="button">C</div>
-                        </div>
-                        <div>
-                            <button id="verify-key" type="submit" class="submit-btn">Submit</button>
-                        </div>
-                    </div>
+        <div class="half-width">
+            <input id="typed-numbers" class="form-control" type="text">
+            <div class="numbers">
+                <div id="key-generator" class="key-body">
+                    <div class="button">1</div>
+                    <div class="button">2</div>
+                    <div class="button">3</div>
+                    <div class="button">4</div>
+                    <div class="button">5</div>
+                    <div class="button">6</div>
+                    <div class="button">7</div>
+                    <div class="button">8</div>
+                    <div class="button">9</div>
+                    <div class="button">0</div>
+                    <div class="button">&lt;</div>
+                    <div class="button">C</div>
+                </div>
+                <div>
+                    <button id="verify-key" type="submit" class="submit-btn">Submit</button>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="message-section">
-        <p id="key-failure" class="message"> key Didn't Match, Please try again</p>
-        <p id="key-success" class="message"> key Matched... Secret door is opening for you</p>
+        <p id="key-failure" class="message"> Key Didn't Match, Please try again</p>
+        <p id="key-success" class="message"> Key Matched.. Congraulation!!!</p>
     </div>
 </body>
+<script src="app.js"></script>
 
 </html>
