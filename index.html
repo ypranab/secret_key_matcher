@@ -16,7 +16,9 @@
         </div>
 
         <div class="half-width">
+            <span>Enter Key</span>
             <input id="typed-numbers" class="form-control" type="text">
+
             <div class="numbers">
                 <div id="key-generator" class="key-body">
                     <div class="button">1</div>
@@ -29,17 +31,21 @@
                     <div class="button">8</div>
                     <div class="button">9</div>
                     <div class="button">0</div>
+                </div>
+                <div id="clear-number" class="key-clear">
                     <div class="button">&lt;</div>
                     <div class="button">C</div>
                 </div>
-                <div>
-                    <button id="verify-key" type="submit" class="submit-btn">Submit</button>
-                </div>
+            </div>
+            <div>
+                <button id="verify-key" type="submit" class="submit-btn">Submit</button>
             </div>
         </div>
     </div>
+    </div>
 
     <div class="message-section">
+        <p id="key-blank" class="message"> Please generate key.</p>
         <p id="key-failure" class="message"> Key Didn't Match, Please try again</p>
         <p id="key-success" class="message"> Key Matched.. Congraulation!!!</p>
     </div>

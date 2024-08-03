@@ -1,7 +1,6 @@
 function getKey() {
-  const key = generateKey();
-  const keyString = key + "";
-  if (keyString.length === 6) {
+  const key = generateKey().toString();
+  if (key.length === 6) {
     return key;
   } else {
     return getKey();
@@ -9,13 +8,12 @@ function getKey() {
 }
 
 function generateKey() {
-  const random = Math.round(Math.random() * 1000000);
+  const random = Math.floor(Math.random() * 1000000);
   return random;
 }
 
 document.getElementById("generate-key").addEventListener("click", function () {
   const key = getKey();
-  // display Key
   const displayKeyField = document.getElementById("display-key");
   displayKeyField.value = key;
 });
@@ -32,6 +30,17 @@ document
       //calc.setAttribute('disabled', true);
       calc.style.pointerEvents = none;
     }
+
+    const newTypedNumber = previousTypedNumber + number;
+    typedNumberField.value = newTypedNumber;
+  });
+
+document
+  .getElementById("clear-number")
+  .addEventListener("click", function (event) {
+    const number = event.target.innerText;
+    const typedNumberField = document.getElementById("typed-numbers");
+    const previousTypedNumber = typedNumberField.value;
     if (isNaN(number)) {
       if (number === "C") {
         typedNumberField.value = "";
@@ -39,9 +48,6 @@ document
         const digits = previousTypedNumber.slice(0, -1);
         typedNumberField.value = digits;
       }
-    } else {
-      const newTypedNumber = previousTypedNumber + number;
-      typedNumberField.value = newTypedNumber;
     }
   });
 
@@ -54,12 +60,19 @@ document.getElementById("verify-key").addEventListener("click", function () {
 
   const keySuccessMessage = document.getElementById("key-success");
   const keyFailureMessage = document.getElementById("key-failure");
+  const keyBlankMessage = document.getElementById("key-blank");
 
-  if (typedNumber === currentKey) {
+  if (currentKey == "") {
+    keySuccessMessage.style.display = "none";
+    keyFailureMessage.style.display = "none";
+    keyBlankMessage.style.display = "block";
+  } else if (typedNumber === currentKey) {
     keySuccessMessage.style.display = "block";
     keyFailureMessage.style.display = "none";
+    keyBlankMessage.style.display = "none";
   } else {
     keyFailureMessage.style.display = "block";
     keySuccessMessage.style.display = "none";
+    keyBlankMessage.style.display = "none";
   }
 });
