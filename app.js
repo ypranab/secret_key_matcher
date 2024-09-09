@@ -1,3 +1,4 @@
+// This function generates random number
 function getKey() {
   const key = generateKey().toString();
   if (key.length === 6) {
@@ -22,14 +23,12 @@ document.getElementById("keypad").addEventListener("click", function (event) {
   const number = event.target.innerText;
   const typedNumbers = document.getElementById("typed-numbers");
   const previousTypedNumber = typedNumbers.value;
-
-  if (previousTypedNumber.length > 5) {
+  const newTypedNumber = previousTypedNumber + number;
+  if (newTypedNumber.length > 6) {
     const keys = document.getElementById("keypad");
     //keys.setAttribute('disabled', true);
     keys.style.pointerEvents = none;
   }
-
-  const newTypedNumber = previousTypedNumber + number;
   typedNumbers.value = newTypedNumber;
 });
 
